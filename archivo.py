@@ -7,7 +7,7 @@ import random
 #-------------------------Estructuras de computadoras digitales II---------------------------------
 #--------------------------------------Modelado de cache-------------------------------------------
 #Estudiantes: Boanerges Martínez Cortez A73791; Brayan Morera A84375
-#					Version 2.0
+#					Version 2.1
 #▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀
 #Chechea que se ingresen la cantidad de parametros y que sean validos
 if (len(sys.argv) != 4):
@@ -122,6 +122,12 @@ else:
 			#print idx, "index para el mapeo de n-ways"
 			idxdecimal=int(idx,2)
 			#print idxdecimal
+			if sett==0:
+				if M[idxdecimal]==tagg:
+					hit=hit+1
+				else:
+					M[idxdecimal]=tagg
+					miss=miss+1
 			for j in range(sett):
 				
 				if M[idxdecimal][j]==0:
@@ -143,9 +149,6 @@ else:
 					
 #▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀						
 #imprimimos los datos obtenidos de la simulacion
-tamcache 
-tambloque 
-asociat	
 print "Cache: asociatividad ",asociat,", tamaño de cache ",tamcache,", tamaño de bloque ",tambloque,", se obtuvieron ",hit," hits"
 print "Cache: asociatividad ",asociat,", tamaño de cache ",tamcache,", tamaño de bloque ",tambloque,", se obtuvieron ",miss," misses"
 print "Total de ingresos a memoria fue de: ",n
